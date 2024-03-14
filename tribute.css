@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFC0CB, #87CEFA); /* Example gradient colors */
+  
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+  border-radius: 10px; /* Rounded corners for the container */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+main {
+  text-align: justify;
+  background: linear-gradient(135deg, #FFC0CB, #87CEFA); /* Example gradient colors */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 8px; /* Add rounded corners for style */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* Set a maximum width */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer p {
+  font-size: 14px;
+  color: #666;
+}

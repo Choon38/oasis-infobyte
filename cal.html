@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="cal.css">
+   
+</head>
+<body>
+    <div class="calculator">
+        <div id="result"></div>
+        <button class="button" onclick="appendNumber('7')">7</button>
+        <button class="button" onclick="appendNumber('8')">8</button>
+        <button class="button" onclick="appendNumber('9')">9</button>
+        <button class="button" onclick="appendOperator('/')">/</button>
+        <button class="button" onclick="appendNumber('4')">4</button>
+        <button class="button" onclick="appendNumber('5')">5</button>
+        <button class="button" onclick="appendNumber('6')">6</button>
+        <button class="button" onclick="appendOperator('*')">*</button>
+        <button class="button" onclick="appendNumber('1')">1</button>
+        <button class="button" onclick="appendNumber('2')">2</button>
+        <button class="button" onclick="appendNumber('3')">3</button>
+        <button class="button" onclick="appendOperator('-')">-</button>
+        <button class="button" onclick="appendNumber('0')">0</button>
+        <button class="button" onclick="clearResult()">C</button>
+        <button class="button" onclick="appendNumber('.')">.</button>
+        <button class="button" onclick="calculate()">=</button>
+    </div>
+    <script>
+        let currentNumber = "";
+        let previousNumber = "";
+        let operator = "";
+
+        function appendNumber(number) {
+            currentNumber += number;
+            updateDisplay();
+        }
+
+        function appendOperator(op) {
+            if (currentNumber !== "") {
+                previousNumber = currentNumber;
+                currentNumber = "";
+                operator = op;
+                updateDisplay();
+            }
+        }
+
+        function clearResult() {
+            currentNumber = "";
+            previousNumber = "";
+            operator = "";
+            updateDisplay();
+        }
+
+        function calculate() {
+            let result = 0;
+            switch (operator) {
+                case "+":
+                    result = parseFloat(previousNumber) + parseFloat(currentNumber);
+                    break;
+                case "-":
+                    result = parseFloat(previousNumber) - parseFloat(currentNumber);
+                    break;
+                case "*":
+                    result = parseFloat(previousNumber) * parseFloat(currentNumber);
+                    break;
+                case "/":
+                    result = parseFloat(previousNumber) / parseFloat(currentNumber);
+                    break;
+            }
+            currentNumber = result.toString();
+            previousNumber = "";
+            operator = "";
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("result").textContent = previousNumber + " " + operator + " " + currentNumber;
+        }
+    </script>
+</body>
+</html>
+
